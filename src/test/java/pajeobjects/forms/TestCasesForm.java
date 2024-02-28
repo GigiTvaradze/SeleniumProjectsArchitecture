@@ -17,20 +17,20 @@ public class TestCasesForm extends BasePage {
         super(actionDriver,wait,js);
     }
 
-    //By clickLocator = By.id("");
-    By setSearchStringLocator = By.id("APjFqb");
-    //By IsDisplayedLocator = By.id("");
-    By getValueLocator = By.xpath("//h3[text()='Flashscore.com: Football Live Scores, Latest Football Results']");
-//    public void click() {
-//      actionDriver.explicitClickByVisibility(wait, clickLocator);
-//    }
+    By clickLocator = By.id("");
+    By setSearchStringLocator = By.id("");
+    By IsDisplayedLocator = By.id("");
+    By getValueLocator = By.xpath("");
+    public void click() {
+      actionDriver.explicitClickByVisibility(wait, clickLocator);
+    }
     public void setString(String value) {
         actionDriver.usualClear(wait, setSearchStringLocator);
         actionDriver.sendKeysByVisibility(wait, setSearchStringLocator, value);
     }
-//    public boolean IsDisplayed() {
-//        return actionDriver.elementIsVisible(IsDisplayedLocator, 5);
-//    }
+    public boolean IsDisplayed() {
+        return actionDriver.elementIsVisible(IsDisplayedLocator, 5);
+    }
     public String getValue() {
         return actionDriver.getTextByVisibility(wait, getValueLocator);
     }
