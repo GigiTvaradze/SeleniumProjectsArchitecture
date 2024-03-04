@@ -30,7 +30,7 @@ public class BaseTest {
     public void setup(ITestResult result) throws MalformedURLException {
         //driver.manage().deleteAllCookies();
 
-        driver = MyDriverManager.getDriver(DriverSetUp.VISUAL);
+        driver = MyDriverManager.getDriver(DriverSetUp.HEADLESS);
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(ConfigProperties.getProperty("webDriverWaitDuration"))));
         js = (JavascriptExecutor) driver;

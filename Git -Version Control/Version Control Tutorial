@@ -19,3 +19,13 @@ Git is the version control system GitHub uses.
 Git is open source and free to use  for small and large projects.
 It is the system that keeps track of every change you make in GitHub.
 GitHub, meanwhile, is where people can share and collaborate on the files they have created.
+
+Go to project folder that you would like to create a repo within.
+You'll first cd to the root project folder and then execute the git init command.
+
+**git init
+To create a new repo, you'll use the git init command.
+git init is a one-time command you use during the initial setup of a new repo.
+Executing this command will create a new .git subdirectory in your current working directory.
+.git makes possible to start recording revisions of the project.
+This will also create a new main branch.
