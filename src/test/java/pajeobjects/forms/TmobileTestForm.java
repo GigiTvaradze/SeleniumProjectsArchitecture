@@ -11,6 +11,9 @@ public class TmobileTestForm extends BasePage {
         super(actionDriver,wait,js);
     }
 
-    By TabletsPageIsDisplayedLocator = By.xpath("");
+    By TabletsPageIsDisplayedLocator = By.xpath("//h1[contains(text(),'Tablets')]");
+    public boolean TabletsPageIsDisplayed() {
+        return actionDriver.elementIsVisible(TabletsPageIsDisplayedLocator, 5);
+    }
 
 }
