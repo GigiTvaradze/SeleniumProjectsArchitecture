@@ -1,0 +1,21 @@
+*What is Git?
+Git is a version control system used for tracking changes in computer files. It is generally used for source code management in software development.
+
+.Git is used to tracking changes in the source code
+.The distributed version control tool is used for source code management
+.It allows multiple developers to work together
+.It supports non-linear development through its thousands of parallel branches
+
+*What is GitHub used for?
+GitHub allows you to create, store, change, merge, and collaborate on files or code.
+Any member of a team can access the GitHub repository (think of this as a folder for files) and see the most recent version in real-time.
+Then, they can make edits or changes that the other collaborators also see.
+GitHub also lets users make requests of one another and internally discuss the iterations along the way.
+It’s even been called “a social coding platform” because it invites people to coordinate, share, and collaborate code across distributed and asynchronous environments.
+
+***
+What’s the difference between Git and GitHub?
+Git is the version control system GitHub uses.
+Git is open source and free to use  for small and large projects.
+It is the system that keeps track of every change you make in GitHub.
+GitHub, meanwhile, is where people can share and collaborate on the files they have created.
