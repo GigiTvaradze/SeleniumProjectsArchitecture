@@ -1,4 +1,4 @@
-package pajeobjects.forms;
+package pajeobjects;
 
 
 import org.openqa.selenium.By;

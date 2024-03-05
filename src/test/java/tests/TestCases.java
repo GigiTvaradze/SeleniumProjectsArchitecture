@@ -2,7 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pajeobjects.forms.TestCasesForm;
+import pajeobjects.TestCasesForm;
 
 public class TestCases extends BaseTest{
     @Test(priority = 1)
