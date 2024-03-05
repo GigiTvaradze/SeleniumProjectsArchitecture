@@ -5,10 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pajeobjects.forms.TestCasesForm;
-import pajeobjects.forms.TmobileTestForm;
+import pajeobjects.forms.TMobileTestForm;
 
-public class TmobileTestCases extends BaseTest{
+public class TMobileTestCase extends BaseTest{
 
     //Go To https://www.t-mobile.com/
     //Hover to Phone&devices
@@ -16,9 +15,8 @@ public class TmobileTestCases extends BaseTest{
     //Write functions which get filters types and takes specific filter parameters
 
     @Test(priority = 1,invocationCount = 10)
-    public void test1(){
-        TmobileTestForm tmobiletestform = new TmobileTestForm(actionDriver,wait,js);
-
+    public void testTMobileTabletsPageFilter() {
+        TMobileTestForm tmobiletestform = new TMobileTestForm(actionDriver,wait,js);
         //visibilityOfElementLocated
         Actions action = new Actions(driver);
         WebElement phonesDevices = driver.findElement(By.xpath("//a[@data-analytics-navigation-name='Phones & devices']"));
@@ -27,5 +25,12 @@ public class TmobileTestCases extends BaseTest{
         action.moveToElement(tablets).click().build().perform();
 
         Assert.assertTrue(tmobiletestform.TabletsPageIsDisplayed());
+
+        tmobiletestform.selectFilter("Deals",
+                                     "Special offer");
+        tmobiletestform.selectFilter("Brands",
+                                     "Apple", "Samsung", "T-Mobile");
+        tmobiletestform.selectFilter("Operating System",
+                                     "Other");
     }
 }
