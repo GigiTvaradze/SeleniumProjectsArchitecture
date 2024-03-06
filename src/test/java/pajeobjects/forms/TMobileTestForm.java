@@ -31,13 +31,9 @@ public class TMobileTestForm extends BasePage {
         WebElement submenu = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@data-analytics-navigation-name='"+subMenuText+"']")));
         action.moveToElement(submenu).click().build().perform();
     }
-    //--//
-    //visibilityOfElementLocated - InProgress
-    //--//
     public void selectFilter(String menu, String... subMenu) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        WebElement menuElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//legend[contains(text(),'" + menu + "')]")));
-        // WebElement menuElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//legend[normalize-space()='" + menu + "']")));
+        WebElement menuElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//legend[contains(text(),'"+menu+"')]")));
         menuElement.click();
 
         if (subMenu[0].equals("all")) {
@@ -64,7 +60,46 @@ public class TMobileTestForm extends BasePage {
         }
     }
     private void clickFilter(String filter, WebDriverWait wait) {
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(), '" + filter + "')]/ancestor::label/span[1]")));
+        By filterLocator = getLocatorForFilter(filter);
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(filterLocator));
         element.click();
     }
+
+    private By getLocatorForFilter(String filter) {
+        switch (filter) {
+            case "New":
+                return DealsNewLocator;
+            case "Special offer":
+                return DealsSpecialOfferLocator;
+            case "Alcatel":
+                return BrandsAlcatelLocator;
+            case "Apple":
+                return BrandsAppleLocator;
+            case "Samsung":
+                return BrandsSamsungLocator;
+            case "T-Mobile":
+                return BrandsTMobileLocator;
+            case "TCL":
+                return BrandsTCLLocator;
+            case "Android":
+                return OperationSystemAndroidLocator;
+            case "iPadOS":
+                return OperationSystemiPadOSLocator;
+            case "Other":
+                return OperationSystemOtherLocator;
+            default:
+                throw new IllegalArgumentException("Unsupported filter: " + filter);
+        }
+    }
+
+    By DealsNewLocator = By.id("mat-checkbox-1");
+    By DealsSpecialOfferLocator = By.id("mat-checkbox-2");
+    By BrandsAlcatelLocator = By.id("mat-checkbox-3");
+    By BrandsAppleLocator = By.id("mat-checkbox-4");
+    By BrandsSamsungLocator = By.id("mat-checkbox-5");
+    By BrandsTMobileLocator = By.id("mat-checkbox-6");
+    By BrandsTCLLocator = By.id("mat-checkbox-7");
+    By OperationSystemAndroidLocator = By.id("mat-checkbox-8");
+    By OperationSystemiPadOSLocator = By.id("mat-checkbox-9");
+    By OperationSystemOtherLocator = By.id("mat-checkbox-10");
 }

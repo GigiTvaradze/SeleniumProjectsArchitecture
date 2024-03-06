@@ -22,9 +22,9 @@ public class TMobileTestCase extends BaseTest {
         Assert.assertTrue(tmobiletestform.TabletsPageIsDisplayed());
 
         tmobiletestform.selectFilter("Deals",
-                                     "Special offer");
+                                     "New");
         tmobiletestform.selectFilter("Brands",
-                                     "Apple", "Samsung", "T-Mobile");
+                                     "Apple", "Samsung", "TCL");
         tmobiletestform.selectFilter("Operating System",
                                      "Other");
     }
