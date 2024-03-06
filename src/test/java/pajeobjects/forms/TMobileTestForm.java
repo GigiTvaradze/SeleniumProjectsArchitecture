@@ -65,8 +65,8 @@ public class TMobileTestForm extends BasePage {
         element.click();
     }
 
-    private By getLocatorForFilter(String filter) {
-        switch (filter) {
+    private By getLocatorForFilter(String submenu) {
+        switch (submenu) {
             case "New":
                 return DealsNewLocator;
             case "Special offer":
@@ -88,7 +88,7 @@ public class TMobileTestForm extends BasePage {
             case "Other":
                 return OperationSystemOtherLocator;
             default:
-                throw new IllegalArgumentException("Unsupported filter: " + filter);
+                throw new IllegalArgumentException("Unsupported: " + submenu);
         }
     }
 
