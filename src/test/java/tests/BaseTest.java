@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
 import utils.ActionDriver;
 import utils.ConfigProperties;
+import utils.MyCustomDriverManager;
 import utils.drivermanager.DriverSetUp;
 import utils.drivermanager.MyDriverManager;
 import utils.logger.ActionLogger;
@@ -18,7 +19,7 @@ import java.net.MalformedURLException;
 import java.time.Duration;
 
 public class BaseTest {
-    protected WebDriver driver;
+    protected  WebDriver driver;
     protected WebDriverWait wait;
     protected JavascriptExecutor js;
     protected ActionLogger actionLogger;
@@ -30,7 +31,9 @@ public class BaseTest {
     public void setup(ITestResult result) throws MalformedURLException {
         //driver.manage().deleteAllCookies();
 
-        driver = MyDriverManager.getDriver(DriverSetUp.HEADLESS);
+//        driver = MyDriverManager.getDriver(DriverSetUp.HEADLESS);
+        driver = MyDriverManager.getDriver(MyCustomDriverManager.BrowserType.CHROME,DriverSetUp.VISUAL);
+
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(ConfigProperties.getProperty("webDriverWaitDuration"))));
         js = (JavascriptExecutor) driver;
@@ -53,7 +56,7 @@ public class BaseTest {
 
     public void tearDown() {
         if (driver != null) {
-            driver.close();
+            //driver.close();
             driver.quit();
         }
     }

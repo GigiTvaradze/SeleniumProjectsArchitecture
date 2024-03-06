@@ -29,3 +29,22 @@ git init is a one-time command you use during the initial setup of a new repo.
 Executing this command will create a new .git subdirectory in your current working directory.
 .git makes possible to start recording revisions of the project.
 This will also create a new main branch.
+
+Edit .gitignore file.This allows you to specify certain files or directories that you don't want to include in your repository,
+such as temporary files, build artifacts, or sensitive information.
+
+**git status
+
+**git add .
+Add your files: Add the files you want to include in the repository.
+This will not add the files specified in .gitignore.
+
+**git commit -m "Initial commit"
+Once you've added the files, commit them to the repository with a descriptive message.
+
+**git remote add origin https://github.com/<username>/<repository>.git
+Once you've created a repository on GitHub, set it as the remote for your local repository.
+Replace <username> and <repository> with your GitHub username and repository name.
+
+**git push -u origin master
+Finally, push your local commits to the remote repository.

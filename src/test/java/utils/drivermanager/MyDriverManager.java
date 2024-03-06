@@ -4,24 +4,44 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import utils.ConfigProperties;
+import utils.MyCustomDriverManager;
 
 import java.net.MalformedURLException;
 
 public class MyDriverManager {
-    public static WebDriver getDriver(DriverSetUp setUp) throws MalformedURLException {
-        System.setProperty(ConfigProperties.getProperty("chromeDriverProperty"), ConfigProperties.getProperty("chromeDriverPath"));
-        switch (setUp) {
-            case VISUAL:
-                return visualSetUp();
-            case HEADLESS:
-                return headlessSetUp();
-            default:
-                throw new IllegalArgumentException("illegal driver set up type: " + setUp);
-        }
+//    public static WebDriver getDriver(DriverSetUp setUp) throws MalformedURLException {
+//        //System.setProperty(ConfigProperties.getProperty("chromeDriverProperty"), ConfigProperties.getProperty("chromeDriverPath"));
+//        System.setProperty(ConfigProperties.getProperty("chromeDriverProperty"), ConfigProperties.getProperty("chromeDriverPath"));
+//        switch (setUp) {
+//            case VISUAL:
+//                return visualSetUp();
+//            case HEADLESS:
+//                return headlessSetUp();
+//            default:
+//                throw new IllegalArgumentException("illegal driver set up type: " + setUp);
+//        }
+//    }
+public static WebDriver getDriver(MyCustomDriverManager.BrowserType browserType, DriverSetUp setUp) throws MalformedURLException {
+    //System.setProperty(ConfigProperties.getProperty("chromeDriverProperty"), ConfigProperties.getProperty("chromeDriverPath"));
+    System.setProperty(ConfigProperties.getProperty("chromeDriverProperty"), ConfigProperties.getProperty("chromeDriverPath"));
+    switch (setUp) {
+        case VISUAL:
+            return visualSetUp(browserType);
+        case HEADLESS:
+            return headlessSetUp();
+        default:
+            throw new IllegalArgumentException("illegal driver set up type: " + setUp);
     }
+}
+//    public static WebDriver visualSetUp() {
+//        WebDriver driver = new ChromeDriver();
+//        driver.manage().window().maximize();
+//        return driver;
+//    }
 
-    public static WebDriver visualSetUp() {
-        WebDriver driver = new ChromeDriver();
+    public static WebDriver visualSetUp(MyCustomDriverManager.BrowserType browserType) {
+        MyCustomDriverManager myCustomDriverManager = new MyCustomDriverManager();
+        WebDriver driver = myCustomDriverManager.getDriver(browserType);
         driver.manage().window().maximize();
         return driver;
     }

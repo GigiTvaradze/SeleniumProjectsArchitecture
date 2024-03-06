@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="MyTestSuite">
+    <listeners>
+        <listener class-name="utils.TestListener"/>
+    </listeners>
+    <test name="MyTest">
+        <classes>
+            <class name="tests.cases.TMobileTestCase" />
+        </classes>
+    </test>
+</suite>
