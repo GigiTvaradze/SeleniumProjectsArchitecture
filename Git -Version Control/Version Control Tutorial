@@ -34,13 +34,15 @@ Edit .gitignore file.This allows you to specify certain files or directories tha
 such as temporary files, build artifacts, or sensitive information.
 
 **git status
+About 359,000,000 results (0.31 seconds)
+The git status command displays the state of the working directory and the staging area.
 
 **git add .
-Add your files: Add the files you want to include in the repository.
+The git add command adds a change in the working directory to the staging area.
 This will not add the files specified in .gitignore.
 
 **git commit -m "Initial commit"
-Once you've added the files, commit them to the repository with a descriptive message.
+Once you've added the files, commit them to the repository with a descriptive message.(First Git Commit)
 
 **git remote add origin https://github.com/<username>/<repository>.git
 Once you've created a repository on GitHub, set it as the remote for your local repository.
